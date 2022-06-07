@@ -177,3 +177,21 @@ h2 {
 .social-icon {
     margin: 20px 10px;
 }
+
+@media (max-width: 500px) {
+    .navbar-brand {
+        font-size: 2rem;
+    }
+
+    #pricing {
+        padding: 16px;
+    }
+
+    #cta {
+        padding: 16px;
+    }
+
+    #footer {
+        padding: 16px 0;
+    }
+}
