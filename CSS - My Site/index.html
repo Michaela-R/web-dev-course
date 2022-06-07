@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marian's Personal Website</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <section id="hero" class="section">
+            <h1 class="tags"> Marian Nisky </h1>
+            <img class="tags" src="assets/dogo-modified.png" alt="Marian" width="200" height="200" >
+            <p>a programmer.</p>
+        </section>
+    </header>
+    <main>
+        <!-- Profile section -->
+        <section id="profile" class="section">
+            <h2 class="tags"> Hello </h2>
+            <p>Lorem ipsum dolor sit amet, vitae volutpat, dui conubia, dolor urna. Non auctor, montes nulla distinctio.</p>
+        </section>
+        <!-- Skills section -->
+        <section id="skills" class="section">
+            <h2 class="tags"> Skills </h2>
+            <h3>Design & Development</h3>
+            <p>Lorem ipsum dolor sit amet, vitae volutpat, dui conubia, dolor urna. Non auctor, montes nulla distinctio.</p>
+            <h3>Programming</h3>
+            <p>Lorem ipsum dolor sit amet, vitae volutpat, dui conubia, dolor urna. Non auctor, montes nulla distinctio.</p>
+        </section>
+        <!-- Contact section -->
+        <section id="contact" class="section">
+            <h2 class="tags"> Contact me </h2>
+            <p>Lorem ipsum dolor sit amet, vitae volutpat, dui conubia, dolor urna. Non auctor, montes nulla distinctio.</p>
+            <a class="btn" href="mailto:test@test.com">CONTACT ME</a>
+        </section>
+    </main>
+    <footer id="footer" class="section tags tags-break">
+        <div class="footer-links">
+            <a class="footer-link" href="https://www.linkedin.com/">LinkedIn</a>
+            <a class="footer-link" href="https://twitter.com/">Twitter</a>
+            <a class="footer-link" href="index.html">Website</a>
+        </div>
+        <p>&copy; 2022 Marian </p>
+    </footer>
+</body>
+</html>
+
+<script>
+    document.querySelectorAll(".tags").forEach((element) => {
+        // Get tag name
+        const tagName = element.tagName.toLowerCase();
+
+        // Create elements for tags
+        const openingTag = document.createElement("span");
+        const closingTag = document.createElement("span");
+
+        // Create <, </ and > span elements with class tag-bracket
+        const leftBracket = "<span class='tag-bracket'>&lt;</span>";
+        const closedLeftBracket = "<span class='tag-bracket'>&lt;/</span>";
+        const rightBracket = "<span class='tag-bracket'>&gt;</span>";
+
+        // Add tagName between brackets
+        openingTag.innerHTML = `${leftBracket}${tagName}${rightBracket}`;
+        closingTag.innerHTML = `${closedLeftBracket}${tagName}${rightBracket}`;
+
+        // Add class tag
+        openingTag.classList.add("tag");
+        closingTag.classList.add("tag");
+        if (element.classList.contains("tags-break")) {
+            // Add block class if element has tag-break class
+            openingTag.classList.add("block");
+            closingTag.classList.add("block");
+        }
+        
+        // Add created tags to element
+        element.prepend(openingTag)
+        element.appendChild(closingTag);
+    })
+</script>
