@@ -17,9 +17,9 @@ $dice2.setAttribute('src', 'images/dice' + dice2Number + '.png');
 
 // Display winner or draw
 if (dice1Number > dice2Number) {
-    $title.textContent = '🚩 Player 1 Wins!';
+    $title.textContent = 'Player 1 Wins!';
 } else if (dice1Number < dice2Number) {
-    $title.textContent = 'Player 2 Wins! 🚩';
+    $title.textContent = 'Player 2 Wins!';
 } else {
     $title.textContent = 'Draw!';
 }
