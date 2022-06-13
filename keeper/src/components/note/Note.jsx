@@ -1,10 +1,10 @@
 import "./styles.scss";
 
-const Note = () => {
+const Note = (props) => {
     return ( 
-        <div class="note">
-            <h2>This is title</h2>
-            <p>This is content</p>
+        <div className="note">
+            <h2>{props.title}</h2>
+            <p>{props.content}</p>
         </div>
      );
 }
