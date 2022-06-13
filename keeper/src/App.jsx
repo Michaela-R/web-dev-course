@@ -1,8 +1,13 @@
-import React from "react";
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import "./styles.scss";
 
 const App = () => {
     return (
-        <div>Test</div>
+        <div id="App">
+            <Header></Header>
+            <Footer></Footer>
+        </div>
     );
 };
 
