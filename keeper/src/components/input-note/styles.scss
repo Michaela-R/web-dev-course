@@ -1,0 +1,43 @@
+.input-note-form {
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem auto;
+    
+    input {
+        font-size: 2rem;
+        background-color: inherit;
+        display: block;
+        outline: 0;
+        width: 100%;
+        border-width: 0 0 0.15rem;
+        border-color: transparent;
+
+        &:focus {
+            border-color: #F5B21A;
+        }
+
+        &:last-of-type {
+            margin-bottom: 1rem;
+        }
+    }
+
+    button[type="submit"] {
+        position: absolute;
+        display: block;
+        padding: 1em;
+        border: none;
+        border-radius: 50%;
+        background-color: #F5B21A;
+        color: white;
+        right: 1rem;
+        bottom: -1rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #d69b10;
+        }
+    }
+}
