@@ -1,4 +1,5 @@
 import "./styles.scss";
+import DeleteIcon from "@material-ui/icons/Delete"
 
 const Note = (props) => {
     const handleDelete = () => {
@@ -9,7 +10,7 @@ const Note = (props) => {
         <div className="note">
             <h2>{props.title}</h2>
             <p>{props.content}</p>
-            <button onClick={handleDelete}>DELETE</button>
+            <button onClick={handleDelete}><DeleteIcon></DeleteIcon></button>
         </div>
      );
 }

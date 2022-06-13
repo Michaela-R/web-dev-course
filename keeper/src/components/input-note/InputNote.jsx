@@ -1,8 +1,15 @@
 import { useState } from "react";
 import "./styles.scss";
+import AddIcon from "@material-ui/icons/Add"
+import { Fab, Zoom } from "@material-ui/core";
 
 const InputNote = (props) => {
     const [note, setNote] = useState({title:"", content:""});
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const expand = () => {
+        setIsExpanded(true);
+    }
 
     const handleSubmit = (e) => {
         props.addNote(note);
@@ -22,9 +29,10 @@ const InputNote = (props) => {
 
     return ( 
         <form className="input-note-form" onSubmit={handleSubmit}>
-            <input type="text" name="title" id="title" placeholder="Title" autoComplete="false" onChange={handleChange} value={note.title} />
-            <input type="text" name="content" id="content" placeholder="Take a note..." autoComplete="false" onChange={handleChange} value={note.content} />
-            <button type="submit">Add</button>
+            {isExpanded && <input type="text" name="title" id="title" placeholder="Title" autoComplete="off" onChange={handleChange} value={note.title} />}
+            <input type="text" name="content" id="content" placeholder="Take a note..." autoComplete="off" 
+                onChange={handleChange} value={note.content} onClick={expand} />
+            <Zoom in={isExpanded}><Fab type="submit"><AddIcon></AddIcon></Fab></Zoom>
         </form>
      );
 }
